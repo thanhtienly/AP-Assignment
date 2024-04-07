@@ -1,0 +1,35 @@
+
+### Add medicine to database, 
+### body of request is an array of medicine's information contain name, type, quantity, price, provideBy,expire_date (number)
+POST http://localhost:3000/api/medicines/import
+Content-Type: application/json
+
+[
+  {
+    "name": "Thuốc giảm đau",
+    "quantity": 15,
+    "price": 15000,
+    "type": "",
+    "provideBy": "",
+    "expire_date": 1712137360216
+  },
+  {
+    "name": "Paracetamol",
+    "quantity": 15,
+    "price": 15000,
+    "type": "",
+    "provideBy": "",
+    "expire_date": 1712137360216
+  }
+]
+
+### Search medicines by name and return list of medicines
+GET http://localhost:3000/api/medicines?name=Thuốc%20kháng%20sinh
+
+### Get medicine list expire at this moment 
+GET http://localhost:3000/api/medicines/expired
+
+### Get medicine list expire at the specific time
+### Query param is a timestamp
+
+GET http://localhost:3000/api/medicines/expire-at?timestamp=1712147360216
